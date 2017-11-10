@@ -77,8 +77,7 @@ export class Timeout {
         const convoId = session.message.address.conversation.id;
         const handler = setTimeout(() => {
             //prompt to check if user is still active
-            builder.Prompts.choice(session, _this.options.PROMPT_IF_USER_IS_ACTIVE_MSG,
-                _this.options.PROMPT_IF_USER_IS_ACTIVE_BUTTON_TEXT, { listStyle: 3 });
+            builder.Prompts.text(session, _this.options.PROMPT_IF_USER_IS_ACTIVE_MSG);
             _this.startEndConversationTimer(session);
         }, _this.options.PROMPT_IF_USER_IS_ACTIVE_TIMEOUT_IN_MS);
 
