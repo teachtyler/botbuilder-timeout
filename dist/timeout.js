@@ -56,7 +56,7 @@ class Timeout {
         const _this = this;
         const convoId = session.message.address.conversation.id;
         const handler = setTimeout(() => {
-            builder.Prompts.choice(session, _this.options.PROMPT_IF_USER_IS_ACTIVE_MSG, _this.options.PROMPT_IF_USER_IS_ACTIVE_BUTTON_TEXT, { listStyle: 3 });
+            builder.Prompts.text(session, _this.options.PROMPT_IF_USER_IS_ACTIVE_MSG);
             _this.startEndConversationTimer(session);
         }, _this.options.PROMPT_IF_USER_IS_ACTIVE_TIMEOUT_IN_MS);
         _this.timeoutStore.setPromptHandlerFor(convoId, handler);
